@@ -1,30 +1,27 @@
 <% provide :title, t(".title") %>
-<div class="wrapper row2">
-  <div id="container" class="clear">
-    <!-- Slider -->
-    <section id="slider" class="clear">
-      <figure><img alt="" src="/assets/home_image.jpeg" />
-        <figcaption>
-          <h3><%= t(".desc") %></h3>
-          <p><%= t(".more_desc") %></p>
-        </figcaption>
+<!-- Slider -->
+<section id="slider" class="clear">
+  <figure><img alt="" src="/assets/home_image.jpeg" />
+    <figcaption>
+      <h3><%= t(".desc") %></h3>
+        <p><%= t(".more_desc") %></p>
+    </figcaption>
+  </figure>
+</section>
+<!-- main content -->
+<div id="intro">
+  <section class="clear">
+    <!-- article 1 -->
+    <article class="five_quarter ">
+      <figure>
+        <ul class="clear">
+          <!-- Example Imgaes -->
+          <li><a href="#"><img src="/assets/pizza_seafood.jpg" width="130" height="130" alt=""></a></li>
+          <li><a href="#"><img src="/assets/pizza.jpg" width="130" height="130" alt=""></a></li>
+            <li class="last"><a href="#"><img src="/assets/orange_juice.jpg" width="130" height="130" alt=""></a></li>
+          </ul>
       </figure>
-    </section>
-    <!-- main content -->
-    <div id="intro">
-      <section class="clear">
-        <!-- article 1 -->
-        <article class="five_quarter ">
-          <figure>
-            <ul class="clear">
-              <!-- Example Imgaes -->
-              <li><a href="#"><img src="/assets/pizza_seafood.jpg" width="130" height="130" alt=""></a></li>
-              <li><a href="#"><img src="/assets/pizza.jpg" width="130" height="130" alt=""></a></li>
-              <li class="last"><a href="#"><img src="/assets/orange_juice.jpg" width="130" height="130" alt=""></a></li>
-            </ul>
-          </figure>
-        </article>
-      </section>
-    </div>
-  </div>
+    </article>
+  </section>
 </div>
+

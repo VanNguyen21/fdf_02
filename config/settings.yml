@@ -10,3 +10,5 @@ models:
     max_length_name : 20
   product :
     max_length : 50
+sessions:
+  remember_me: "1"
