@@ -1,0 +1,31 @@
+<% provide(:title, (t ".title")) %>
+<center><h1><%= (t ".title")%></h1></center>
+<br></br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-8">
+                        <h4> <%= t ".full_name" %> : <%= @user.full_name %></h4>
+                        <h2><cite > <%= t ".address" %>
+                            <i class="glyphicon glyphicon-map-marker"></i> :
+                            <%= @user.address %>
+                        </cite></h2>
+                        <h2> <%= t ".email_address" %>
+                            <i class="glyphicon glyphicon-envelope"></i>  :
+                             <%= @user.email %>
+                        </h2>
+                        <br></br>
+                        <!-- Split button -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary">
+                               <%= link_to ( t ".edit"),user_edit_path %>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

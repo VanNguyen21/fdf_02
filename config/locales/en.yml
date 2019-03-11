@@ -40,6 +40,7 @@ en:
   welcome: Welcome to the Foods and Drinks
   profile: Profile
   log_out: Log Out
+  profile_updated: Profile updated
   layouts:
     header:
       desc: Order Foods And Drinks
@@ -58,10 +59,22 @@ en:
     new:
       confirm: Confirmation
       title: Sign Up
-      create_button: Create my account
+      button_text: Create my account
+    show:
+      full_name : Full Name
+      address : Address
+      email_address : Email Address
+      edit : Edit Profile
+      title : User Information
+    edit:
+      title: Update your profile
+      button_text : Save change
   sessions:
     new:
       title: Log in
       sign_up: Sign up now!
       new_user: New user?
       remember_me: Remember me
+
+
+

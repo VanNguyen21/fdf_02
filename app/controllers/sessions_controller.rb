@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :load_user, only: [:edit,:show,:update]
   def new; end
 
   def create
@@ -16,6 +17,7 @@ class SessionsController < ApplicationController
       render "new"
     end
   end
+
 
   def destroy
     log_out if logged_in?
