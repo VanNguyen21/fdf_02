@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show,:update,:edit]
-
-  def show
-  end
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
+  def show;   end
 
   def new
     @user = User.new
@@ -12,20 +12,19 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = I18n.t "welcome"
+      flash[:success] = t "welcome"
       edirect_to root_path
     else
-      render "new"
+      render new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = I18n.t "profile_updated"
-      redirect_to current_user
+      flash[:success] = t "profile_updated"
+      redirect_to @user
     else
       render user_edit_path
     end
@@ -40,10 +39,20 @@ class UsersController < ApplicationController
 
   def load_user
     @user = User.find(params[:id])
+    return if @user
+    flash[:danger] = t "please_login"
+    redirect_to root_path
   end
 
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] =  t "please_login"
+      redirect_to login_url
+    end
+  end
 
-  def load_user
-    @user = current_user
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user? @user
   end
 end

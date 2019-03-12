@@ -40,6 +40,7 @@ en:
   welcome: Welcome to the Foods and Drinks
   profile: Profile
   log_out: Log Out
+  please_login: Please Log In
   profile_updated: Profile updated
   layouts:
     header:

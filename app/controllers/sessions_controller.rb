@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :load_user, only: [:edit,:show,:update]
   def new; end
 
   def create
@@ -13,11 +12,10 @@ class SessionsController < ApplicationController
       end
       redirect_to root_path
     else
-      flash.now[:danger] = I18n.t "invalid"
-      render "new"
+      flash.now[:danger] = t "invalid"
+      render :new
     end
   end
-
 
   def destroy
     log_out if logged_in?
